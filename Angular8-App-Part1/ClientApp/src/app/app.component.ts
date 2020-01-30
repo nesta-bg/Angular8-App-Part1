@@ -1,10 +1,12 @@
+//Click on the Component F12 = go to the definition
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  template: `
+  <h1>Hello {{ title }} </h1>
+  `
 })
 export class AppComponent {
-  title = 'ClientApp';
+  title: string = 'ClientApp';
 }
