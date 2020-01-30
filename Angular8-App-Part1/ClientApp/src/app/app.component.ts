@@ -3,8 +3,13 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html'
+  template: `
+    <div>
+      <h1> {{ pageHeader }} </h1>
+      <my-employee></my-employee>
+    </div>
+  `
 })
 export class AppComponent {
-  title: string = 'ClientApp';
+  pageHeader: string = 'Employee Details';
 }
