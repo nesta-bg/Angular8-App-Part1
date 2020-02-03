@@ -1,4 +1,10 @@
-<employee-count></employee-count>
+<employee-count
+    [all]="getTotalEmployeesCount()"
+    [male]="getMaleEmployeesCount()"
+    [female]="getFemaleEmployeesCount()"
+></employee-count
+
+    >
 <br /> <br />
 <table>
     <thead>
