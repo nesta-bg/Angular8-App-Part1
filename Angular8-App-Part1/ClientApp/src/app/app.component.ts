@@ -14,6 +14,10 @@ import { Component } from '@angular/core';
     <input [(ngModel)]='name' >
     <br>
     You entered : {{ name }}
+
+    <br><br>
+
+    <list-employee></list-employee>
   `
 })
 export class AppComponent {
