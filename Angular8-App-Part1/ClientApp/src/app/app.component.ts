@@ -3,14 +3,21 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   template: `
-    <button (click)='onClick()'>Click me</button><br/><br/>
-    <button on-click='onClick()'>Click me</button><br/><br/>
+    Name : 
+    <input [value]='name' (input)='name = $event.target.value'>
+    <br>
+    You entered : {{ name }}
+    
+    <br><br>
 
-    <my-employee></my-employee>
+    Name : 
+    <input [(ngModel)]='name' >
+    <br>
+    You entered : {{ name }}
   `
 })
 export class AppComponent {
-  onClick(): void {
-    console.log('Button Clicked');
-  }
+  name: string = 'Tom';
 }
+
+
