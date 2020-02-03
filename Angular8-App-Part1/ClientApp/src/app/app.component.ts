@@ -3,32 +3,33 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   template: `
-    <div>
-      <button class="colorClass" [class]='classesToApply'>My Button</button>
-      <br /><br />
-      <button class="colorClass" [class.boldClass]='!applyBoldClass'>My Button</button>
-      <br /><br />
-      <button class="colorClass italicsClass boldClass" [class.boldClass]='applyBoldClass'>My Button</button>
-      <br /><br />
-      <button class="colorClass" [ngClass]='addClasses()'>My Button</button>
-      <br /><br />
-      <my-employee></my-employee>
-    </div>
+    <button style='color:red' 
+      [style.font-weight]="isBold ? 'bold' : 'normal'">
+    My Button</button><br/><br/>
+    <button style='color:red' 
+      [style.fontWeight]="isBold ? 'bold' : 'normal'">
+    My Button</button><br/><br/>
+
+    <button style='color:red'
+      [style.font-size.px]="fontSize">
+    My Button</button><br/><br/>
+
+    <button style='color:red' 
+      [ngStyle]="addStyles()">
+    My Button</button>
   `
 })
 export class AppComponent {
-  classesToApply: string = 'italicsClass boldClass';
-  applyBoldClass: boolean = false;
-  applyItalicsClass: boolean = true;
-  colorClass: boolean = false;
+  isBold: boolean = true;
+  fontSize: number = 30;
+  isItalic: boolean = true;
 
-  addClasses() {
-    let classes = {
-      boldClass: this.applyBoldClass,
-      italicsClass: this.applyItalicsClass,
-      colorClass: this.colorClass
+  addStyles() {
+    let styles = {
+        'font-weight': this.isBold ? 'bold' : 'normal',
+        'font-style': this.isItalic ? 'italic' : 'normal',
+        'font-size.px': this.fontSize
     };
-    return classes;
+    return styles;
   }
-
 }
