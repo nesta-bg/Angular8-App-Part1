@@ -19,6 +19,6 @@ namespace Angular8_App_Part1.Models
         [Column(TypeName = "decimal(18, 3)")]
         public decimal AnnualSalary { get; set; }
 
-        public string DayOfBirth { get; set; }
+        public string DateOfBirth { get; set; }
     }
 }

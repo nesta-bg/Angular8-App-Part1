@@ -8,7 +8,7 @@ namespace Angular8AppPart1.Migrations
         {
             migrationBuilder.InsertData(
                 table: "Employees",
-                columns: new[] { "Code", "AnnualSalary", "DayOfBirth", "Gender", "Name" },
+                columns: new[] { "Code", "AnnualSalary", "DateOfBirth", "Gender", "Name" },
                 values: new object[,]
                 {
                     { "emp101", 5500m, "6/25/1988", "Male", "Tom" },

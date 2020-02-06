@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Angular8AppPart1.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20200206122906_SeedEmployeesTable")]
-    partial class SeedEmployeesTable
+    [Migration("20200206181110_FixTypoInEmployeesTable")]
+    partial class FixTypoInEmployeesTable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -28,7 +28,7 @@ namespace Angular8AppPart1.Migrations
                     b.Property<decimal>("AnnualSalary")
                         .HasColumnType("decimal(18, 3)");
 
-                    b.Property<string>("DayOfBirth");
+                    b.Property<string>("DateOfBirth");
 
                     b.Property<string>("Gender");
 
@@ -37,15 +37,6 @@ namespace Angular8AppPart1.Migrations
                     b.HasKey("Code");
 
                     b.ToTable("Employees");
-
-                    b.HasData(
-                        new { Code = "emp101", AnnualSalary = 5500m, DayOfBirth = "6/25/1988", Gender = "Male", Name = "Tom" },
-                        new { Code = "emp102", AnnualSalary = 5700.95m, DayOfBirth = "9/6/1982", Gender = "Male", Name = "Alex" },
-                        new { Code = "emp103", AnnualSalary = 5900m, DayOfBirth = "12/8/1979", Gender = "Male", Name = "Mike" },
-                        new { Code = "emp104", AnnualSalary = 6500.826m, DayOfBirth = "10/14/1980", Gender = "Female", Name = "Mary" },
-                        new { Code = "emp105", AnnualSalary = 6700.826m, DayOfBirth = "12/15/1982", Gender = "Female", Name = "Nancy" },
-                        new { Code = "emp106", AnnualSalary = 7700.481m, DayOfBirth = "11/18/1979", Gender = "Male", Name = "Steve" }
-                    );
                 });
 #pragma warning restore 612, 618
         }

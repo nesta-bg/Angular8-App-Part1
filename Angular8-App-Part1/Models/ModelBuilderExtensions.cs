@@ -17,7 +17,7 @@ namespace Angular8_App_Part1.Models
                    Name = "Tom",
                    Gender = "Male",
                    AnnualSalary = 5500,
-                   DayOfBirth = "6/25/1988"
+                   DateOfBirth = "6/25/1988"
                },
                new Employee
                {
@@ -25,7 +25,7 @@ namespace Angular8_App_Part1.Models
                    Name = "Alex",
                    Gender = "Male",
                    AnnualSalary = 5700.95M,
-                   DayOfBirth = "9/6/1982"
+                   DateOfBirth = "9/6/1982"
                },
                new Employee
                {
@@ -33,7 +33,7 @@ namespace Angular8_App_Part1.Models
                    Name = "Mike",
                    Gender = "Male",
                    AnnualSalary = 5900,
-                   DayOfBirth = "12/8/1979"
+                   DateOfBirth = "12/8/1979"
                },
                new Employee
                {
@@ -41,7 +41,7 @@ namespace Angular8_App_Part1.Models
                    Name = "Mary",
                    Gender = "Female",
                    AnnualSalary = 6500.826M,
-                   DayOfBirth = "10/14/1980"
+                   DateOfBirth = "10/14/1980"
                },
                new Employee
                {
@@ -49,7 +49,7 @@ namespace Angular8_App_Part1.Models
                    Name = "Nancy",
                    Gender = "Female",
                    AnnualSalary = 6700.826M,
-                   DayOfBirth = "12/15/1982"
+                   DateOfBirth = "12/15/1982"
                },
                new Employee
                {
@@ -57,7 +57,7 @@ namespace Angular8_App_Part1.Models
                    Name = "Steve",
                    Gender = "Male",
                    AnnualSalary = 7700.481M,
-                   DayOfBirth = "11/18/1979"
+                   DateOfBirth = "11/18/1979"
                }
            );
         }
