@@ -6,7 +6,7 @@ import { EmployeeService } from './employee.service';
     selector: 'list-employee',
     templateUrl: './employeeList.component.html',
     styleUrls: ['./employeeList.component.css'],
-    providers: [EmployeeService]
+    // providers: [EmployeeService]
 })
 
 export class EmployeeListComponent implements OnInit {
@@ -22,7 +22,8 @@ export class EmployeeListComponent implements OnInit {
 
     // for tasks that are time consuming
     ngOnInit() {
-        this.employees = this._employeeService.getEmployees();
+        this._employeeService.getEmployees()
+            .subscribe((employeeData) => this.employees = employeeData );
     }
 
     getTotalEmployeesCount(): number {
