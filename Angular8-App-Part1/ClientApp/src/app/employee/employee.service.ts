@@ -24,6 +24,14 @@ export class EmployeeService {
             );
     }
 
+    getEmployeeByCode(empCode: string): Observable<IEmployee> {
+        return this._http.get<IEmployee>(this._apiUrl + "/" + empCode)
+            .pipe(
+                retry(1),
+                catchError(this.handleError)
+            );  
+    }
+
     // handleError(error: any) {
     //     let errorMessage = '';
     //     if (error.error instanceof ErrorEvent) {

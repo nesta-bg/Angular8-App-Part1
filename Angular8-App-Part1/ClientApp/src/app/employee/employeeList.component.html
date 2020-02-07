@@ -23,7 +23,11 @@ onEmployeeCountRadioButtonChange($event) = event handler in employeeList.compone
         <ng-container *ngFor='let employee of employees'>
         <tr *ngIf="selectedEmployeeCountRadioButton=='All' ||
             selectedEmployeeCountRadioButton==employee.gender">
-            <td>{{ employee.code | uppercase }}</td>
+            <td> 
+                <a [routerLink]="['/employees', employee.code]">
+                    {{ employee.code | uppercase }}
+                </a> 
+            </td>
             <td>{{ employee.name | employeeTitle:employee.gender }}</td>
             <td>{{ employee.gender }}</td>
             <td>{{ employee.annualSalary | currency:'USD':'code':'1.3-3' }}</td>
