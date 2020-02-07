@@ -17,13 +17,19 @@ export class EmployeeListComponent implements OnInit {
     // are displayed in the table by default
     selectedEmployeeCountRadioButton: string = 'All';
 
+    statusMessage: string = 'Loading data. Please wait...';
+
     constructor(private _employeeService: EmployeeService) {
     }
 
-    // for tasks that are time consuming
+    //for tasks that are time consuming
     ngOnInit() {
         this._employeeService.getEmployees()
-            .subscribe((employeeData) => this.employees = employeeData );
+            .subscribe((employeeData) => this.employees = employeeData, 
+                       (error) => { this.statusMessage =
+                        //error
+                        'Problem with the service. Please try again after sometime';
+                        console.error(error) });
     }
 
     getTotalEmployeesCount(): number {
