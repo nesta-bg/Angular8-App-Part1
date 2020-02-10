@@ -13,6 +13,8 @@ import { SimpleComponent } from './Others/simple.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './Others/pageNotFound.component';
 
+// import { UserPreferencesService } from './employee/userPreferences.service';
+
 //from more specific to more general
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -39,7 +41,9 @@ const appRoutes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(appRoutes, { useHash: false })
   ],
-  providers: [],
+  providers: [
+    // UserPreferencesService
+  ],
   bootstrap: [AppComponent]
 })
 

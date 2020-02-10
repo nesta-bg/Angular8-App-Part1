@@ -8,6 +8,7 @@ import { UserPreferencesService } from '../employee/userPreferences.service';
     templateUrl: './employeeList.component.html',
     styleUrls: ['./employeeList.component.css'],
     // providers: [EmployeeService]
+    // providers: [UserPreferencesService]
 })
 
 export class EmployeeListComponent implements OnInit {

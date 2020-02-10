@@ -8,7 +8,8 @@ import { UserPreferencesService } from '../employee/userPreferences.service';
             Colour Preference :
             <input type='text' [(ngModel)]='colour' [style.background]="colour"/>
         </div>
-    `
+    `,
+    // providers: [UserPreferencesService]
 })
 
 export class HomeComponent {
