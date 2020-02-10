@@ -20,10 +20,8 @@ export class EmployeeListComponent implements OnInit {
 
     statusMessage: string = 'Loading data. Please wait...';
 
-    private _userPreferencesService: UserPreferencesService;
-
-    constructor(private _employeeService: EmployeeService) {
-        this._userPreferencesService = new UserPreferencesService();
+    constructor(private _employeeService: EmployeeService,
+        private _userPreferencesService: UserPreferencesService) {
     }
 
     get colour(): string {
