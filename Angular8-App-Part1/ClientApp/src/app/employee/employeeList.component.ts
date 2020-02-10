@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IEmployee } from './employee';
 import { EmployeeService } from './employee.service';
+import { UserPreferencesService } from '../employee/userPreferences.service';
 
 @Component({
     selector: 'list-employee',
@@ -19,7 +20,18 @@ export class EmployeeListComponent implements OnInit {
 
     statusMessage: string = 'Loading data. Please wait...';
 
+    private _userPreferencesService: UserPreferencesService;
+
     constructor(private _employeeService: EmployeeService) {
+        this._userPreferencesService = new UserPreferencesService();
+    }
+
+    get colour(): string {
+        return this._userPreferencesService.colourPreference;
+    }
+
+    set colour(value: string) {
+        this._userPreferencesService.colourPreference = value;
     }
 
     //for tasks that are time consuming
