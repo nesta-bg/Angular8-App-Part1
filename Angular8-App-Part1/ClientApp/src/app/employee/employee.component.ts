@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IEmployee } from './employee';
 import { EmployeeService } from './employee.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
     selector: 'my-employee',
@@ -13,8 +13,10 @@ export class EmployeeComponent implements OnInit {
     employee: IEmployee;
     statusMessage: string = 'Loading data. Please wait...';
 
-    constructor(private _employeeService: EmployeeService,
-        private _activatedRoute: ActivatedRoute) {
+    constructor(
+        private _employeeService: EmployeeService,
+        private _activatedRoute: ActivatedRoute,
+        private _router: Router) {
             
     }
 
@@ -33,5 +35,9 @@ export class EmployeeComponent implements OnInit {
                        //error
                        'Problem with the service. Please try again after sometime';
                        console.error(error) });
+    }
+
+    onBackButtonClick() :void {
+        this._router.navigate(['/employees']);
     }
 }
