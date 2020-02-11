@@ -24,12 +24,17 @@ export class EmployeeService {
             );
     }
 
-    getEmployeeByCode(empCode: string): Observable<IEmployee> {
-        return this._http.get<IEmployee>(this._apiUrl + "/" + empCode)
-            .pipe(
-                retry(1),
-                catchError(this.handleError)
-            );  
+    // get F12 Go To Definition
+    // getEmployeeByCode(empCode: string): Observable<IEmployee> {
+    //     return this._http.get<IEmployee>(this._apiUrl + "/" + empCode)
+    //         .pipe(
+    //             retry(1),
+    //             catchError(this.handleError)
+    //         );  
+    // }
+
+    getEmployeeByCode(empCode: string): Promise<IEmployee> {
+        return this._http.get<IEmployee>(this._apiUrl + "/" + empCode).toPromise();  
     }
 
     // handleError(error: any) {
