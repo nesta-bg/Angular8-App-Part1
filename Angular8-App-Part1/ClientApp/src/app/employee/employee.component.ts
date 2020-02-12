@@ -23,32 +23,31 @@ export class EmployeeComponent implements OnInit {
     ngOnInit(){
         let empCode: string = this._activatedRoute.snapshot.params['code'];
 
-        // this._employeeService.getEmployeeByCode(empCode)
-        //     .subscribe((employeeData) => {
-        //                 if (employeeData == null) {
-        //                     this.statusMessage =
-        //                         'Employee with the specified Employee Code does not exist';
-        //                 }else {
-        //                     this.employee = employeeData;
-        //                 }}, 
-        //                (error) => { this.statusMessage =
-        //                //error
-        //                'Problem with the service. Please try again after sometime';
-        //                console.error(error) });
-
         this._employeeService.getEmployeeByCode(empCode)
-            .then((employeeData)=>{
-                if (employeeData == null) {
-                    this.statusMessage =
-                        'Employee with the specified Employee Code does not exist';
-                }else {
-                    this.employee = employeeData;
-                } 
-            }).catch((error)=>{
-                this.statusMessage =  'Problem with the service. Please try again after sometime';
-                console.error(error)
-            });
+            .subscribe((employeeData) => {
+                        if (employeeData == null) {
+                            this.statusMessage =
+                                'Employee with the specified Employee Code does not exist';
+                        }else {
+                            this.employee = employeeData;
+                        }}, 
+                       (error) => { this.statusMessage =
+                       //error
+                       'Problem with the service. Please try again after sometime' + error;
+                       console.error(error) });
 
+        // this._employeeService.getEmployeeByCode(empCode)
+        //     .then((employeeData)=>{
+        //         if (employeeData == null) {
+        //             this.statusMessage =
+        //                 'Employee with the specified Employee Code does not exist';
+        //         }else {
+        //             this.employee = employeeData;
+        //         } 
+        //     }).catch((error)=>{
+        //         this.statusMessage =  'Problem with the service. Please try again after sometime';
+        //         console.error(error)
+        //     });
     }
 
     onBackButtonClick() :void {
